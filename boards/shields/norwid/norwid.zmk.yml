@@ -1,0 +1,10 @@
+file_format: "1"
+id: norwid
+name: norwid
+type: shield
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - norwid_left
+  - norwid_right

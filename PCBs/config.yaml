@@ -1,0 +1,500 @@
+units:
+  kx: cx
+  ky: cy
+  px: kx+2
+  py: ky+2
+  $default_width: cx
+  $default_height: cy
+  outterWall: 1
+  innerWall: 1.5
+  standSize: 2.5
+  mountSize: 1.5
+  mountHeight: 3
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [100,-200]
+      key:
+        padding: py
+        spread: px
+      columns:
+        pinky:
+          key.column_net: P10
+        ring:
+          key.stagger: 5
+          key.column_net: P9
+        middle:
+          key.stagger: 0.5cy
+          key.column_net: P8
+        index:
+          key:
+            stagger: -0.5cy
+            column_net: P7
+        inner:
+          key.stagger: 0.5cy
+          key.column_net: P6
+      rows:
+        bottom:
+          row_net: P2
+        home:
+          row_net: P1
+        top:
+          row_net: P0
+    thumbfan:
+      key:
+        padding: py
+        spread: px
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -31]
+      columns:
+        near:
+          key.column_net: P8
+        home:
+          key.origin: [-px/2, -py/2]
+          key.splay: -28
+          key.column_net: P7
+        far:
+          key.origin: [-px/2, -py/2]
+          key.splay: -28
+          key.column_net: P6
+      rows:
+        thumb:
+          row_net: P3
+    thumbfanLower:
+      key:
+        padding: py
+        spread: px
+      anchor:
+        ref: thumbfan_near_thumb
+        shift: [-0, -py]
+        #rotate: -12
+      columns:
+        home:
+          key.column_net: P9
+        far:
+          key.origin: [-px/2, -py/2-2]
+          key.splay: -57
+          key.column_net: P10
+      rows:
+        thumbLow:
+          row_net: P3
+  #rotate: 20
+  #mirror:
+  #  ref: matrix_pinky_home
+  #  distance: 293.7529778
+outlines:
+  base:
+    - what: rectangle
+      where: true
+      size: [px,py]
+      bound: false
+  keys:
+    - what: rectangle
+      size: [kx,ky]
+      where: true
+      operation: add
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-3kx/4,3ky/4]
+        - ref: matrix_pinky_top
+          shift: [4,3ky/4]
+        - ref: matrix_middle_top
+          shift: [-4,3ky/4]
+        - ref: matrix_inner_top
+          shift: [2kx,3ky/4]
+        - ref: matrix_inner_bottom
+          shift: [2kx,0]
+        - ref: matrix_inner_bottom
+          shift: [2kx,-2ky]
+        - ref: thumbfan_far_thumb
+          shift: [3kx/4,3ky/4]
+        - ref: thumbfanLower_far_thumbLow
+          shift: [3kx/4,-3ky/4]
+        - ref: thumbfanLower_home_thumbLow
+          shift: [-3kx/4,-3ky/4]
+        - ref: thumbfan_near_thumb
+          shift: [-3kx/4,ky/4]
+        - ref: matrix_pinky_bottom
+          shift: [-3kx/4,-3ky/4]
+      fillet: 2
+  innerBoard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-3kx/4+innerWall,3ky/4-innerWall]
+        - ref: matrix_pinky_top
+          shift: [4,3ky/4-innerWall]
+        - ref: matrix_middle_top
+          shift: [-4,3ky/4-innerWall]
+        - ref: matrix_inner_top
+          shift: [2kx-innerWall,3ky/4-innerWall]
+        - ref: matrix_inner_bottom
+          shift: [2kx-innerWall,0]
+        - ref: matrix_inner_bottom
+          shift: [2kx-innerWall,-2ky]
+        - ref: thumbfan_far_thumb
+          shift: [3kx/4-innerWall,3ky/4-innerWall]
+        - ref: thumbfanLower_far_thumbLow
+          shift: [3kx/4-innerWall,-3ky/4+innerWall]
+        - ref: thumbfanLower_home_thumbLow
+          shift: [-3kx/4+innerWall,-3ky/4+innerWall]
+        - ref: thumbfan_near_thumb
+          shift: [-3kx/4+innerWall,ky/4+innerWall]
+        - ref: matrix_pinky_bottom
+          shift: [-3kx/4+innerWall,-3ky/4+innerWall]
+      fillet: 2
+  caseBoard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-3kx/4-outterWall,3ky/4+outterWall]
+        - ref: matrix_pinky_top
+          shift: [4,3ky/4+outterWall]
+        - ref: matrix_middle_top
+          shift: [-4,3ky/4+outterWall]
+        - ref: matrix_inner_top
+          shift: [2kx+outterWall,3ky/4+outterWall]
+        - ref: matrix_inner_bottom
+          shift: [2kx+outterWall,0]
+        - ref: matrix_inner_bottom
+          shift: [2kx+outterWall,-2ky]
+        - ref: thumbfan_far_thumb
+          shift: [3kx/4+outterWall,3ky/4+outterWall]
+        - ref: thumbfanLower_far_thumbLow
+          shift: [3kx/4+outterWall,-3ky/4-outterWall]
+        - ref: thumbfanLower_home_thumbLow
+          shift: [-3kx/4-outterWall,-3ky/4-outterWall]
+        - ref: thumbfan_near_thumb
+          shift: [-3kx/4-outterWall,ky/4-outterWall]
+        - ref: matrix_pinky_bottom
+          shift: [-3kx/4-outterWall,-3ky/4-outterWall]
+      fillet: 2
+  stands:
+    - what: circle
+      radius: standSize
+      where:
+        ref.aggregate.parts: [thumbfanLower_far_thumbLow, thumbfanLower_home_thumbLow, thumbfan_home_thumb]
+        shift: [0, 0]
+    - what: circle
+      radius: standSize
+      where: 
+        ref: matrix_index_top
+        shift: [0, ky-2]
+    - what: circle
+      radius: standSize
+      where: 
+        ref: matrix_middle_bottom
+        shift: [0, -ky]
+    - what: circle
+      radius: standSize
+      where: 
+        ref: matrix_inner_home
+        shift: [5kx/4, 0]
+  mounting:
+    - what: circle
+      radius: mountSize
+      where:
+        ref.aggregate.parts: [thumbfanLower_far_thumbLow, thumbfanLower_home_thumbLow, thumbfan_home_thumb]
+        shift: [0, 0]
+    - what: circle
+      radius: mountSize
+      where: 
+        ref: matrix_index_top
+        shift: [0, ky-2]
+    - what: circle
+      radius: mountSize
+      where: 
+        ref: matrix_middle_bottom
+        shift: [0, -ky]
+    - what: circle
+      radius: mountSize
+      where: 
+        ref: matrix_inner_home
+        shift: [5kx/4, 0]
+  pcb_board:
+    - name: board
+    - operation: subtract
+      name: keys
+  support_wall_prev:
+    - name: board
+    - operation: subtract
+      name: innerBoard
+  wall_prev:
+    - name: caseBoard
+    - operation: subtract
+      name: board
+pcbs:
+  bottom_pcb:
+    #template: kicad8
+    outlines:
+      main:
+        outline: board
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust: 
+          shift: [0,-5]
+      mcu:
+        what: xiao_flippable_2
+        params:
+          side: "B"
+        where:
+          ref: matrix_inner_top
+          shift: [kx-4, -8.25]
+          rotate: 270
+      oled:
+        what: display_ssd1306
+        params:
+          side: "F"
+          reversible: true
+          SDA: P4
+          SCL: P5
+          VCC: VCC3
+        where:
+          ref: matrix_inner_home
+          shift: [kx+5, -0.25]
+          #rotate: 90
+      reset: 
+        what: omron_reversible
+        params: 
+          #side: "F"
+          reversible: true
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_bottom
+          shift: [kx+1,-14]
+          rotate: -90
+      battery_connector:
+        what: battery_connector_jst_ph_2
+        params:
+          side: "B"
+          reversible: true
+          BAT_P: 'BAT_P'
+          BAT_N: 'BAT_N'
+        where:
+          ref: matrix_inner_bottom
+          shift: [7kx/4,-ky/4-2]
+      power:
+        what: power_switch_smd_side
+        params:
+          side: "F"
+          reversible: true
+          from: 'MCU_BAT_P'
+          to: 'BAT_P'
+        where:
+          ref: matrix_inner_home
+          shift: [2kx-2,-6-ky/2]
+          rotate: 0
+      xiao_battery:
+        what: battery_connector_jst_ph_2
+        params:
+          side: "B"
+          reversible: true
+          BAT_P: 'MCU_BAT_P' 
+          BAT_N:  'BAT_N'          
+        where:
+          ref: matrix_inner_home
+          shift: [7kx/4,-ky/4-2]
+          rotate: 180
+      xiao_rst:
+        what: pin
+        params: 
+          reversible: true
+          pin: 'RST'
+          label: 'rst'
+        where:
+          ref: matrix_inner_home
+          shift: [3kx/4,-ky/2]
+          rotate: 180 
+
+      col_via_11:
+        what: utility_router
+        where:
+          ref: matrix_pinky_top
+          shift: [0,3ky/5]
+        params:
+          net: P10
+          route: "(0,0)v"
+      col_via_12:
+        what: utility_router
+        where:
+          ref: matrix_ring_top
+          shift: [0,3ky/5]
+        params:
+          net: P9
+          route: "(0,0)v"
+      col_via_13:
+        what: utility_router
+        where:
+          ref: matrix_middle_top
+          shift: [0,3ky/5]
+        params:
+          net: P8
+          route: "(0,0)v"
+      col_via_14:
+        what: utility_router
+        where:
+          ref: matrix_index_top
+          shift: [0,3ky/5]
+        params:
+          net: P7
+          route: "(0,0)v"
+      col_via_15:
+        what: utility_router
+        where:
+          ref: matrix_inner_top
+          shift: [0,3ky/5]
+        params:
+          net: P6
+          route: "(0,0)v"
+
+      col_via_21:
+        what: utility_router
+        where:
+          ref: matrix_pinky_bottom
+          shift: [0,-3ky/5]
+        params:
+          net: P10
+          route: "(0,0)v"
+      col_via_22:
+        what: utility_router
+        where:
+          ref: matrix_ring_bottom
+          shift: [0,-3ky/5]
+        params:
+          net: P9
+          route: "(0,0)v"
+      col_via_23:
+        what: utility_router
+        where:
+          ref: matrix_middle_bottom
+          shift: [0,-3ky/5]
+        params:
+          net: P8
+          route: "(0,0)v"
+      col_via_24:
+        what: utility_router
+        where:
+          ref: matrix_index_bottom
+          shift: [0,-3ky/5]
+        params:
+          net: P7
+          route: "(0,0)v"
+      col_via_25:
+        what: utility_router
+        where:
+          ref: matrix_inner_bottom
+          shift: [0,-3ky/5]
+        params:
+          net: P6
+          route: "(0,0)v"
+
+      mounting_hole_1:
+        what: mounting_hole_npth
+        where: 
+          ref.aggregate.parts: [thumbfanLower_far_thumbLow, thumbfanLower_home_thumbLow, thumbfan_home_thumb]
+          shift: [0, 0]
+      mounting_hole_2:
+        what: mounting_hole_npth
+        where: 
+          ref: matrix_index_top
+          shift: [0, ky-2]
+      mounting_hole_3:
+        what: mounting_hole_npth
+        where: 
+          ref: matrix_middle_bottom
+          shift: [0, -ky]
+      mounting_hole_4:
+        what: mounting_hole_npth
+        where: 
+          ref: matrix_inner_home
+          shift: [5kx/4, 0]
+
+      choco_routing:
+        what: utility_router
+        where: true
+        params:
+          net: "{{row_net}}"
+          route: "f(-8,-4)(-8,3)(2,3)(2,5)(4,5)x(-4,5)(-2,5)xb(8,-4)(8,5)(4,5)(2,5)x(-2,5)(-4,5)"
+cases:
+  bottom:
+    - name: board
+      extrude: 1.5
+  caseBottom:
+    - name: caseBoard
+      extrude: 1.5
+  _outter:
+    - name: caseBoard
+      extrude: 6.5
+  _middle:
+    - name: board
+      extrude: 6.5
+  _innerOut:
+    - name: caseBoard
+      extrude: 4.9
+  _inner:
+    - name: innerBoard
+      extrude: 4.9
+  _innerSupport:
+    - what: case
+      name: _innerOut
+      operation: add
+    - what: case
+      name: _inner
+      operation: subtract
+  _stands:
+    - name: stands
+      extrude: 6.5-1.6
+  _holes:
+    - name: mounting
+      extrude: 6.5-1.6
+  _mount_fillaments:
+    - name: stands
+      extrude: 6.5-1.6-mountHeight
+  _mountingStands:
+    - what: case 
+      name: _stands
+      operation: add
+    - what: case 
+      name: _holes
+      operation: subtract
+  caze:
+    - what: case
+      name: _outter
+      operation: add
+    - what: case
+      name: _middle
+      operation: subtract
+    - what: case
+      name: caseBottom
+      operation: add
+    - what: case
+      name: _innerSupport
+      operation: add
+    - what: case
+      name: _mountingStands
+      operation: add
+    - what: case 
+      name: _mount_fillaments
+      operation: add

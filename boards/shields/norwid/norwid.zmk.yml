@@ -3,8 +3,11 @@ id: norwid
 name: norwid
 type: shield
 requires: [seeeduino_xiao_ble]
+exposes:
+  - i2c_oled
 features:
   - keys
+  - display
 siblings:
   - norwid_left
   - norwid_right

@@ -10,6 +10,10 @@ units:
   standSize: 2.5
   mountSize: 1.5
   mountHeight: 3
+
+  bottomSpace: 5
+  bottomThick: 1.5
+  pcbThick: 1.6
 points:
   zones:
     matrix:
@@ -230,6 +234,44 @@ outlines:
     - name: caseBoard
     - operation: subtract
       name: board
+  power_sw:
+    - what: circle
+      radius: 20
+      where:
+          ref: matrix_inner_home
+          shift: [2kx-2+20,-6-ky/2]
+          rotate: 0
+  usb:
+    - what: rectangle
+      size: [10,30]
+      where:
+          ref: matrix_inner_top
+          shift: [kx-4, 0]
+  kb_mount_shaft:
+    - what: circle
+      radius: 3.1
+      where:
+        ref: matrix_middle_home
+  kb_mount_socket:
+    - what: circle
+      radius: 6
+      where:
+        ref: matrix_middle_home
+  kb_mount:
+    - what: polygon
+      points:
+        - ref: matrix_middle_home
+          shift: [0,3.58]
+        - ref: matrix_middle_home
+          shift: [3.1,1.79]
+        - ref: matrix_middle_home
+          shift: [3.1,-1.79]
+        - ref: matrix_middle_home
+          shift: [0,-3.58]
+        - ref: matrix_middle_home
+          shift: [-3.1,-1.79]
+        - ref: matrix_middle_home
+          shift: [-3.1,1.79]
 pcbs:
   bottom_pcb:
     #template: kicad8
@@ -438,40 +480,44 @@ pcbs:
           net: "{{row_net}}"
           route: "f(-8,-4)(-8,3)(2,3)(2,5)(4,5)x(-4,5)(-2,5)xb(8,-4)(8,5)(4,5)(2,5)x(-2,5)(-4,5)"
 cases:
-  bottom:
-    - name: board
-      extrude: 1.5
   caseBottom:
     - name: caseBoard
-      extrude: 1.5
-  _outter:
+      extrude: bottomThick
+  _outterWall:
     - name: caseBoard
-      extrude: 6.5
-  _middle:
+      extrude: bottomThick+bottomSpace+pcbThick
+  _outterWallInsert:
     - name: board
-      extrude: 6.5
-  _innerOut:
+      extrude: bottomThick+bottomSpace+pcbThick
+  _innerWall:
     - name: caseBoard
-      extrude: 4.9
-  _inner:
+      extrude: bottomThick+bottomSpace
+  _innerWallInsert:
     - name: innerBoard
-      extrude: 4.9
-  _innerSupport:
+      extrude: bottomThick+bottomSpace
+  _outterCoveringWall:
     - what: case
-      name: _innerOut
+      name: _outterWall
       operation: add
     - what: case
-      name: _inner
+      name: _outterWallInsert
+      operation: subtract
+  _innerSupportingWall:
+    - what: case
+      name: _innerWall
+      operation: add
+    - what: case
+      name: _innerWallInsert
       operation: subtract
   _stands:
     - name: stands
-      extrude: 6.5-1.6
+      extrude: bottomThick+bottomSpace
   _holes:
     - name: mounting
-      extrude: 6.5-1.6
+      extrude: bottomThick+bottomSpace
   _mount_fillaments:
     - name: stands
-      extrude: 6.5-1.6-mountHeight
+      extrude: bottomThick+bottomSpace-mountHeight
   _mountingStands:
     - what: case 
       name: _stands
@@ -479,22 +525,49 @@ cases:
     - what: case 
       name: _holes
       operation: subtract
+    - what: case 
+      name: _mount_fillaments
+      operation: add
+  _kb_mount:
+    - name: kb_mount_socket
+      extrude: bottomThick+bottomSpace-1
+  _kb_mount_inner:
+    - name: kb_mount
+      extrude: 15
+      shift: [0,0,bottomThick]
+    - name: kb_mount_shaft
+      extrude: 40
+      operation: add
+  _power_sw:
+    - name: power_sw
+      extrude: 3
+      shift: [0,0,bottomThick+bottomSpace+pcbThick-3]
+  _usb:
+    - name: usb
+      extrude: 4
+      shift: [9,0,bottomThick+bottomSpace-4]
   caze:
     - what: case
-      name: _outter
+      name: _outterCoveringWall
       operation: add
-    - what: case
-      name: _middle
-      operation: subtract
     - what: case
       name: caseBottom
       operation: add
     - what: case
-      name: _innerSupport
+      name: _innerSupportingWall
       operation: add
     - what: case
       name: _mountingStands
       operation: add
     - what: case 
-      name: _mount_fillaments
+      name: _power_sw
+      operation: subtract
+    - what: case 
+      name: _usb
+      operation: subtract
+    - what: case 
+      name: _kb_mount
       operation: add
+    - what: case 
+      name: _kb_mount_inner
+      operation: subtract

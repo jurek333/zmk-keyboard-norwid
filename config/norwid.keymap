@@ -41,7 +41,7 @@
         };
         sys_layer {
             bindings = <
-                &bt BT_CLR    &trans        &trans        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &trans      &trans      &trans
+                &bt BT_CLR    &trans        &kp N3        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N3      &trans      &trans
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hm RSHFT PSCRN &hm RCTRL K_VOL_UP &hm LALT K_VOL_DN  &hm LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
                 &trans        &kp DEL       &kp SPACE     &kp TAB       &to 0                   &mo 1       &kp ESC     &kp ENTER   &kp BSPC    &to 4

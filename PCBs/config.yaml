@@ -10,8 +10,9 @@ units:
   standSize: 2.5
   mountSize: 1.5
   mountHeight: 3
-
-  bottomSpace: 5
+  tiltAngle: 5
+  tan_tiltAngle: 0.087488663525
+  bottomSpace: 17
   bottomThick: 1.5
   pcbThick: 1.6
 points:
@@ -241,37 +242,44 @@ outlines:
           ref: matrix_inner_home
           shift: [2kx-2+20,-6-ky/2]
           rotate: 0
+  usbPcb:
+    - what: rectangle
+      size: [20,21]
+      where:
+          ref: matrix_inner_top
+          shift: [kx-4, 0]
   usb:
     - what: rectangle
       size: [10,30]
       where:
           ref: matrix_inner_top
           shift: [kx-4, 0]
+  _batteryWall:
+    - what: rectangle
+      size: [15, 2]
+      where:
+        ref.aggregate.parts: [thumbfanLower_far_thumbLow, thumbfanLower_home_thumbLow, thumbfan_home_thumb]
+        shift: [-82-mountSize,0]
+        #rotate: 28
   kb_mount_shaft:
     - what: circle
-      radius: 3.1
+      radius: 3.2
       where:
         ref: matrix_middle_home
   kb_mount_socket:
     - what: circle
-      radius: 6
+      radius: 7
       where:
         ref: matrix_middle_home
   kb_mount:
-    - what: polygon
-      points:
+    - what: circle
+      radius: 4
+      where:
         - ref: matrix_middle_home
-          shift: [0,3.58]
-        - ref: matrix_middle_home
-          shift: [3.1,1.79]
-        - ref: matrix_middle_home
-          shift: [3.1,-1.79]
-        - ref: matrix_middle_home
-          shift: [0,-3.58]
-        - ref: matrix_middle_home
-          shift: [-3.1,-1.79]
-        - ref: matrix_middle_home
-          shift: [-3.1,1.79]
+  _cutPlane:
+    - what: rectangle
+      size: [900, 900]
+     
 pcbs:
   bottom_pcb:
     #template: kicad8
@@ -480,9 +488,29 @@ pcbs:
           net: "{{row_net}}"
           route: "f(-8,-4)(-8,3)(2,3)(2,5)(4,5)x(-4,5)(-2,5)xb(8,-4)(8,5)(4,5)(2,5)x(-2,5)(-4,5)"
 cases:
-  caseBottom:
-    - name: caseBoard
+  _cuttingBoxBottom:
+    - name: _cutPlane
+      rotate: [0,tiltAngle,0]
+      shift: [215,0,0]
       extrude: bottomThick
+  _cuttingBoxWalls:
+    - name: _cutPlane
+      rotate: [0,tiltAngle,0]
+      shift: [215,0,0]
+      extrude: 900
+  _boxBottom:
+    - name: caseBoard
+      extrude: 900
+  caseBottom:
+    - what: case
+      name: _boxBottom
+    - what: case
+      name: _cuttingBoxBottom
+      operation: intersect
+  _battery:
+    - name: _batteryWall
+      extrude: bottomThick+bottomSpace
+      rotate: [0,0,90]
   _outterWall:
     - name: caseBoard
       extrude: bottomThick+bottomSpace+pcbThick
@@ -530,28 +558,32 @@ cases:
       operation: add
   _kb_mount:
     - name: kb_mount_socket
-      extrude: bottomThick+bottomSpace-1
+      extrude: bottomThick+5
+  _kb_shaft:
+    - name: kb_mount_shaft
+      extrude: 50
+      shift: [0,0,-2]
   _kb_mount_inner:
     - name: kb_mount
-      extrude: 15
+      extrude: 5
       shift: [0,0,bottomThick]
-    - name: kb_mount_shaft
-      extrude: 40
+    - what: case
+      name: _kb_shaft
       operation: add
   _power_sw:
     - name: power_sw
       extrude: 3
-      shift: [0,0,bottomThick+bottomSpace+pcbThick-3]
+      shift: [0,0,bottomThick+bottomSpace]
   _usb:
     - name: usb
-      extrude: 4
-      shift: [9,0,bottomThick+bottomSpace-4]
-  caze:
+      extrude: 4.4
+      shift: [9,0,bottomThick+bottomSpace+pcbThick-12.2-4.2]
+    - name: usbPcb
+      extrude: 2
+      shift: [9,2,bottomThick+bottomSpace+pcbThick-12.2]
+  walls:
     - what: case
       name: _outterCoveringWall
-      operation: add
-    - what: case
-      name: caseBottom
       operation: add
     - what: case
       name: _innerSupportingWall
@@ -565,9 +597,23 @@ cases:
     - what: case 
       name: _usb
       operation: subtract
-    - what: case 
+    - what: case
+      name: caseBottom
+      operation: add
+  caze:
+    - what: case
+      name: walls
+      operation: add
+    - what: case
+      name: _cuttingBoxWalls
+      operation: intersect
+    - what: case
       name: _kb_mount
+      shift: [0,0,70*tan_tiltAngle+bottomThick]
+      rotate: [0,tiltAngle,0]
       operation: add
     - what: case 
       name: _kb_mount_inner
+      shift: [0,0,70*tan_tiltAngle+bottomThick]
+      rotate: [0,tiltAngle,0]
       operation: subtract

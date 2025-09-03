@@ -8,7 +8,7 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -18,7 +18,7 @@
         alfa_layer {
             bindings = <
                 &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-                &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G       &kp H       &hm RSHFT J &hm RCTRL K &hm LALT L  &hm LGUI SQT
+                &hm LGUI A  &hm RALT S  &hm LCTRL D &hm LSHFT F &kp G       &kp H       &hm RSHFT J &hm RCTRL K &hm RALT L  &hm LGUI SQT
                 &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH     
                 &to 3       &kp DEL     &kp SPACE   &kp TAB     &to 2       &mo 1       &kp ESC     &kp ENTER   &kp BSPC    &to 4
             >;
@@ -27,15 +27,15 @@
             bindings = <
                 &kp EXCL        &kp AT           &kp HASH       &kp DLLR       &kp PRCNT        &kp CARET &kp AMPS     &kp STAR       &kp MINUS     &kp EQUAL
                 &hm LGUI K_COPY &hm LALT K_PASTE &hm LCTRL LPAR &hm LSHFT RPAR &kp PIPE         &kp LT    &hm RSHFT GT &hm RCTRL SEMI &hm LALT APOS &hm LGUI BSLH
-                &trans          &trans           &kp LBRC       &kp RBRC       &kp GRAVE        &kp LBKT  &kp RBKT     &kp COMMA      &kp DOT       &kp FSLH     
-                &to 3           &kp DEL          &kp SPACE      &kp TAB        &to 2            &none     &kp ESC      &kp ENTER      &kp BSPC      &to 4
+                &kp K_CUT       &trans           &kp LBRC       &kp RBRC       &kp GRAVE        &kp LBKT  &kp RBKT     &kp COMMA      &kp DOT       &kp FSLH     
+                &to 3           &kp DEL          &kp SPACE      &kp TAB        &to 0            &none     &kp ESC      &kp ENTER      &kp BSPC      &to 4
             >;
         };
         numbers_layer {
             bindings = <
-                &kp LT          &kp GT            &kp KP_LPAR           &kp KP_RPAR       &kp CARET             &kp LS(C) &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp LS(F)
-                &hm LGUI KP_DOT &hm LALT KP_COMMA &hm LCTRL KP_MULTIPLY &hm LSHFT KP_PLUS &kp PRCNT             &kp LS(B) &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp LS(E)
-                &kp LBKT        &kp RBKT          &trans                &kp KP_MINUS      &kp KP_DIVIDE         &kp LS(A) &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp LS(D)     
+                &kp LT          &kp GT            &kp KP_LPAR           &kp KP_RPAR       &kp CARET             &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
+                &hm LGUI KP_DOT &hm LALT KP_COMMA &hm LCTRL KP_MULTIPLY &hm LSHFT KP_PLUS &kp PRCNT             &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
+                &kp LBKT        &kp RBKT          &trans                &kp KP_MINUS      &kp KP_DIVIDE         &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
                 &to 3           &kp DEL           &mt KP_EQUAL ENTER    &kp TAB           &to 0                 &mo 1     &kp COMMA &kp N0    &kp BSPC  &to 4
             >;
         };

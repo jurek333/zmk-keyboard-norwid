@@ -65,14 +65,14 @@ function power_sw_extrude_3_outline_fn(){
 
 
 function usb_extrude_4_4_outline_fn(){
-    return new CSG.Path2D([[189,-163.5],[199,-163.5]]).appendPoint([199,-133.5]).appendPoint([189,-133.5]).appendPoint([189,-163.5]).close().innerToCAG()
+    return new CSG.Path2D([[198,-163.5],[208,-163.5]]).appendPoint([208,-133.5]).appendPoint([198,-133.5]).appendPoint([198,-163.5]).close().innerToCAG()
 .extrude({ offset: [0, 0, 4.4] });
 }
 
 
-function usbPcb_extrude_2_outline_fn(){
-    return new CSG.Path2D([[184,-159],[204,-159]]).appendPoint([204,-138]).appendPoint([184,-138]).appendPoint([184,-159]).close().innerToCAG()
-.extrude({ offset: [0, 0, 2] });
+function usbPcb_extrude_5_outline_fn(){
+    return new CSG.Path2D([[193,-156.8],[213,-156.8]]).appendPoint([213,-135.8]).appendPoint([193,-135.8]).appendPoint([193,-156.8]).close().innerToCAG()
+.extrude({ offset: [0, 0, 5] });
 }
 
 
@@ -548,13 +548,13 @@ function kb_mount_shaft_extrude_50_outline_fn(){
                 _usb__part_0 = rotate([0,0,0], _usb__part_0);
                 _usb__part_0 = translate([_usb__part_0_x, _usb__part_0_y, 0], _usb__part_0);
 
-                _usb__part_0 = translate([9,0,3.700000000000002], _usb__part_0);
+                _usb__part_0 = translate([0,0,3.700000000000002], _usb__part_0);
                 let result = _usb__part_0;
                 
             
 
                 // creating part 1 of case _usb
-                let _usb__part_1 = usbPcb_extrude_2_outline_fn();
+                let _usb__part_1 = usbPcb_extrude_5_outline_fn();
 
                 // make sure that rotations are relative
                 let _usb__part_1_bounds = _usb__part_1.getBounds();
@@ -564,7 +564,7 @@ function kb_mount_shaft_extrude_50_outline_fn(){
                 _usb__part_1 = rotate([0,0,0], _usb__part_1);
                 _usb__part_1 = translate([_usb__part_1_x, _usb__part_1_y, 0], _usb__part_1);
 
-                _usb__part_1 = translate([9,2,7.900000000000002], _usb__part_1);
+                _usb__part_1 = translate([0,0,5.900000000000002], _usb__part_1);
                 result = result.union(_usb__part_1);
                 
             

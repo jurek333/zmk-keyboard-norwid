@@ -227,6 +227,18 @@ outlines:
     - name: board
     - operation: subtract
       name: keys
+  usbPcb:
+    - what: rectangle
+      size: [20,21]
+      where:
+          ref: matrix_inner_top
+          shift: [kx-4+9, 2.2]
+  usb:
+    - what: rectangle
+      size: [10,30]
+      where:
+          ref: matrix_inner_top
+          shift: [kx-4+9, 0]
   support_wall_prev:
     - name: board
     - operation: subtract
@@ -235,6 +247,12 @@ outlines:
     - name: caseBoard
     - operation: subtract
       name: board
+    - operation: add
+      name: support_wall_prev
+    - operation: subtract
+      name: usbPcb
+    - operation: subtract
+      name: usb
   power_sw:
     - what: circle
       radius: 20
@@ -242,18 +260,6 @@ outlines:
           ref: matrix_inner_home
           shift: [2kx-2+20,-6-ky/2]
           rotate: 0
-  usbPcb:
-    - what: rectangle
-      size: [20,21]
-      where:
-          ref: matrix_inner_top
-          shift: [kx-4, 0]
-  usb:
-    - what: rectangle
-      size: [10,30]
-      where:
-          ref: matrix_inner_top
-          shift: [kx-4, 0]
   _batteryWall:
     - what: rectangle
       size: [15, 2]
@@ -577,10 +583,10 @@ cases:
   _usb:
     - name: usb
       extrude: 4.4
-      shift: [9,0,bottomThick+bottomSpace+pcbThick-12.2-4.2]
+      shift: [0,0,bottomThick+bottomSpace+pcbThick-12.2-4.2]
     - name: usbPcb
-      extrude: 2
-      shift: [9,2,bottomThick+bottomSpace+pcbThick-12.2]
+      extrude: 5
+      shift: [0,0,bottomThick+bottomSpace+pcbThick-12.2-2]
   walls:
     - what: case
       name: _outterCoveringWall

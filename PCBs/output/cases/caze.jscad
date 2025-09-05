@@ -23,13 +23,13 @@ function innerBoard_extrude_18_5_outline_fn(){
 
 
 function stands_extrude_18_5_outline_fn(){
-    return CAG.circle({"center":[202.5,-167.5],"radius":2.5})
+    return CAG.circle({"center":[202.5,-167.5],"radius":4})
 .union(
-    CAG.circle({"center":[140,-203.5],"radius":2.5})
+    CAG.circle({"center":[140,-203.5],"radius":4})
 ).union(
-    CAG.circle({"center":[160,-142],"radius":2.5})
+    CAG.circle({"center":[160,-142],"radius":4})
 ).union(
-    CAG.circle({"center":[189.1268526,-236.6433568],"radius":2.5})
+    CAG.circle({"center":[189.1268526,-236.6433568],"radius":4})
 ).extrude({ offset: [0, 0, 18.5] });
 }
 
@@ -46,15 +46,15 @@ function mounting_extrude_18_5_outline_fn(){
 }
 
 
-function stands_extrude_15_5_outline_fn(){
-    return CAG.circle({"center":[202.5,-167.5],"radius":2.5})
+function stands_extrude_13_5_outline_fn(){
+    return CAG.circle({"center":[202.5,-167.5],"radius":4})
 .union(
-    CAG.circle({"center":[140,-203.5],"radius":2.5})
+    CAG.circle({"center":[140,-203.5],"radius":4})
 ).union(
-    CAG.circle({"center":[160,-142],"radius":2.5})
+    CAG.circle({"center":[160,-142],"radius":4})
 ).union(
-    CAG.circle({"center":[189.1268526,-236.6433568],"radius":2.5})
-).extrude({ offset: [0, 0, 15.5] });
+    CAG.circle({"center":[189.1268526,-236.6433568],"radius":4})
+).extrude({ offset: [0, 0, 13.5] });
 }
 
 
@@ -492,7 +492,7 @@ function kb_mount_shaft_extrude_50_outline_fn(){
                     
 
                 // creating part 0 of case _mount_fillaments
-                let _mount_fillaments__part_0 = stands_extrude_15_5_outline_fn();
+                let _mount_fillaments__part_0 = stands_extrude_13_5_outline_fn();
 
                 // make sure that rotations are relative
                 let _mount_fillaments__part_0_bounds = _mount_fillaments__part_0.getBounds();

@@ -7,9 +7,9 @@ units:
   $default_height: cy
   outterWall: 1
   innerWall: 1.5
-  standSize: 2.5
+  standSize: 4
   mountSize: 1.5
-  mountHeight: 3
+  mountHeight: 5
   tiltAngle: 5
   tan_tiltAngle: 0.087488663525
   bottomSpace: 17

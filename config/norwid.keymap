@@ -12,47 +12,71 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Home Row Mod L";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 35 36 37 38 39>;
+            hold-trigger-on-release;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Home Row Mod R";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34>;
+            hold-trigger-on-release;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
         alfa_layer {
             bindings = <
                 &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-                &hm LGUI A  &hm RALT S  &hm LCTRL D &hm LSHFT F &kp G       &kp H       &hm RSHFT J &hm RCTRL K &hm RALT L  &hm LGUI MINUS
+                &hml LGUI A  &hml RALT S  &hml LCTRL D &hml LSHFT F &kp G   &kp H       &hmr RSHFT J &hmr RCTRL K &hmr RALT L  &hmr LGUI MINUS
                 &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH     
-                &to 3       &kp DEL     &kp SPACE   &kp TAB     &to 2       &mo 1       &kp ESC     &kp ENTER   &kp BSPC    &to 4
+                &to 2       &kp DEL     &kp SPACE   &kp TAB     &to 3       &to 4       &kp ESC     &kp ENTER   &kp BSPC    &mo 1
             >;
         };
         symbol_layer {
             bindings = <
-                &kp UP     &kp AT        &kp HASH       &kp DLLR       &kp PRCNT        &kp CARET &kp AMPS     &kp STAR       &kp MINUS     &kp EQUAL
-                &kp DOWN   &hm LALT EXCL &hm LCTRL LPAR &hm LSHFT RPAR &kp PIPE         &kp LT    &hm RSHFT GT &hm RCTRL SEMI &hm LALT APOS &hm LGUI DQT
+                &kp UP     &kp DOWN        &kp HASH       &kp DLLR       &kp PRCNT        &kp CARET &kp AMPS     &kp STAR       &kp MINUS     &kp EQUAL
+                &hml LWIN AT  &hml LALT EXCL &hml LCTRL LPAR &hml LSHFT RPAR &kp PIPE      &kp LT    &hmr RSHFT GT &hmr RCTRL SEMI &hmr LALT APOS &hmr LGUI DQT
                 &kp LEFT   &kp RIGHT     &kp LBRC       &kp RBRC       &kp GRAVE        &kp LBKT  &kp RBKT     &kp COMMA      &kp DOT       &kp BSLH     
-                &to 3      &kp DEL       &kp SPACE      &kp TAB        &to 2            &none     &kp ESC      &kp ENTER      &kp BSPC      &to 4
+                &to 2      &kp DEL       &kp SPACE      &kp TAB        &to 3            &to 4     &kp ESC      &kp ENTER      &kp BSPC      &none
             >;
         };
         numbers_layer {
             bindings = <
                 &kp LT          &kp GT            &kp KP_LPAR           &kp KP_RPAR       &kp CARET             &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
-                &hm LGUI KP_DOT &hm LALT KP_COMMA &hm LCTRL KP_MULTIPLY &hm LSHFT KP_PLUS &kp PRCNT             &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
+                &hml LGUI KP_DOT &hml LALT KP_COMMA &hml LCTRL KP_MULTIPLY &hml LSHFT KP_PLUS &kp PRCNT         &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT        &kp RBKT          &trans                &kp KP_MINUS      &kp KP_DIVIDE         &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
-                &to 3           &kp DEL           &mt KP_EQUAL ENTER    &kp TAB           &to 0                 &mo 1     &kp COMMA &kp N0    &kp BSPC  &to 4
+                &to 0           &kp DEL           &mt KP_EQUAL ENTER    &kp TAB           &to 3                 &to 4     &kp COMMA &kp N0    &kp BSPC  &mo 1
             >;
         };
         sys_layer {
             bindings = <
                 &bt BT_CLR    &trans        &kp N3        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N3      &trans      &trans
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hm RSHFT PSCRN &hm RCTRL K_VOL_UP &hm LALT K_VOL_DN  &hm LGUI PAUSE_BREAK
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hmr RSHFT PSCRN &hmr RCTRL K_VOL_UP &hmr LALT K_VOL_DN  &hmr LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
-                &to 0         &kp DEL       &kp SPACE     &kp TAB       &to 2                   &mo 1       &kp ESC     &kp ENTER   &kp BSPC    &to 4
+                &to 2         &kp DEL       &kp SPACE     &kp TAB       &to 0                   &to 4       &kp ESC     &kp ENTER   &kp BSPC    &mo 1
             >;
         };
         nav_layer {
             bindings = <
                 &kp F9  &kp F10  &kp F11   &kp F12   &kp ESC                    &trans      &kp HOME    &trans      &kp END     &kp PG_UP
-                &kp F5  &hm LALT F6  &hm LCTRL F7  &hm LSHFT F8  &kp PSCRN      &trans      &kp LEFT    &kp UP      &kp RIGHT   &kp PG_DN
+                &kp F5  &hml LALT F6  &hml LCTRL F7  &hml LSHFT F8  &kp PSCRN   &trans      &kp LEFT    &kp UP      &kp RIGHT   &kp PG_DN
                 &kp F1  &kp F2   &kp F3    &kp F4    &kp PAUSE_BREAK            &trans      &trans      &kp DOWN    &trans      &kp FSLH     
-                &to 3   &kp LALT &kp RCTRL &kp RSHFT &to 2                      &mo 1       &kp ESC     &kp ENTER   &kp BSPC    &to 0
+                &to 2   &kp LALT &kp RCTRL &kp RSHFT &to 3                      &to 0       &kp ESC     &kp ENTER   &kp BSPC    &mo 1
             >;
         };
     }; 

@@ -59,7 +59,7 @@
             >;
         };
         symbol_layer {
-            display-name = "sym"
+            display-name = "sym";
             bindings = <
                 &kp UP     &kp DOWN        &kp HASH       &kp DLLR       &kp PRCNT       &kp CARET &kp AMPS      &kp STAR        &kp MINUS      &kp EQUAL
                 &hml LWIN AT  &hml LALT EXCL &hml LCTRL LPAR &hml LSHFT RPAR &kp PIPE    &kp LT    &hmr RSHFT GT &hmr RCTRL SEMI &hmr LALT APOS &hmr LGUI DQT

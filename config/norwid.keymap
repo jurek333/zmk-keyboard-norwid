@@ -94,8 +94,8 @@
                 &kp F9  &kp F10  &kp F11   &kp F12   &kp ESC                    &trans      &kp HOME    &trans      &kp END     &kp PG_UP
                 &kp F5  &hml LALT F6  &hml LCTRL F7  &hml LSHFT F8  &kp PSCRN   &trans      &kp LEFT    &kp UP      &kp RIGHT   &kp PG_DN
                 &kp F1  &kp F2   &kp F3    &kp F4    &kp PAUSE_BREAK            &trans      &trans      &kp DOWN    &trans      &kp FSLH     
-                                 &kp RCTRL &kp RSHFT &to 3                      &to 0       &trans      &kp ENTER
-                                    &kp LALT  &to 2                                 &mo 1           &none
+                                 &kp RCTRL &kp RSHFT &kp LALT                   &trans       &trans      &trans
+                                        &to 3  &to 2                                 &mo 1           &to 0
             >;
         };
     }; 

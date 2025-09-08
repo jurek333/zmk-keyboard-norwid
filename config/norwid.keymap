@@ -74,7 +74,7 @@
                 &kp LT            &kp GT            &kp KP_DOT           &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
                 &hml LGUI KP_LPAR &hml LALT KP_RPAR &hml LCTRL KP_COMMA  &hml LSHFT KP_PLUS &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT          &kp RBKT          &kp KP_EQUAL         &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
-                                                           &trans        &kp trans          &kp ENTER            &trans    &kp COMMA  &kp N0
+                                                           &trans        &trans          &kp ENTER            &trans    &kp COMMA  &kp N0
                                                                 &to 0             &to 0                              &mo 1    &to 4
             >;
         };
@@ -84,7 +84,7 @@
                 &bt BT_CLR    &trans        &kp N3        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N3      &trans      &trans
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hmr RSHFT PSCRN &hmr RCTRL K_VOL_UP &hmr LALT K_VOL_DN  &hmr LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
-                                                &trans     &trans       &trans                  &&trans     &trans     &trans
+                                                &trans     &trans       &trans                  &trans     &trans     &trans
                                                     &to 0         MO_TOG(2)                         &mo 1           &to 4
             >;
         };

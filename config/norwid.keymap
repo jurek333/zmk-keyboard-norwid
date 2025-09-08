@@ -54,8 +54,8 @@
                 &kp Q       &kp W       &kp E        &kp R         &kp T       &kp Y  &kp U        &kp I        &kp O       &kp P
                 &hml LGUI A &hml RALT S &hml LCTRL D &hml LSHFT F  &kp G       &kp H  &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr LGUI MINUS
                 &kp Z       &kp X       &kp C        &kp V         &kp B       &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH     
-                                        &kp SPACE    &hml HOME TAB &to 3       &to 4  &hmr END ESC &kp ENTER
-                                                &kp DEL     MO_TOG(2)               &mo 1    &kp BSPC
+                                        &kp SPACE    &hml HOME ESC &kp DEL     &kp BSPC  &hmr END TAB &kp ENTER
+                                                &to 0      MO_TOG(2)               &mo 1    &to 4
             >;
         };
         symbol_layer {
@@ -64,8 +64,8 @@
                 &kp UP     &kp DOWN        &kp HASH       &kp DLLR       &kp PRCNT       &kp CARET &kp AMPS      &kp STAR        &kp MINUS      &kp EQUAL
                 &hml LWIN AT  &hml LALT EXCL &hml LCTRL LPAR &hml LSHFT RPAR &kp PIPE    &kp LT    &hmr RSHFT GT &hmr RCTRL SEMI &hmr LALT APOS &hmr LGUI DQT
                 &kp LEFT   &kp RIGHT     &kp LBRC       &kp RBRC       &kp GRAVE         &kp LBKT  &kp RBKT      &kp COMMA       &kp DOT        &kp BSLH     
-                                         &trans         &trans         &kp PG_UP         &none     &trans        &trans
-                                                    &trans      &kp PG_DN                    &none       &trans
+                                         &trans         &trans         &trans            &trans    &trans        &trans
+                                                    &kp PG_UP      &kp PG_DN                  &none       &to 4
             >;
         };
         numbers_layer {
@@ -74,8 +74,8 @@
                 &kp LT            &kp GT            &kp KP_DOT           &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
                 &hml LGUI KP_LPAR &hml LALT KP_RPAR &hml LCTRL KP_COMMA  &hml LSHFT KP_PLUS &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT          &kp RBKT          &kp KP_EQUAL         &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
-                                                    &kp SPACE            &kp TAB            &kp ENTER            &to 4     &kp COMMA &kp N0
-                                                                &kp DEL             &to 0                               &mo 1    &kp BSPC
+                                                           &trans        &kp trans          &kp ENTER            &trans    &kp COMMA  &kp N0
+                                                                &to 0             &to 0                              &mo 1    &to 4
             >;
         };
         sys_layer {
@@ -84,8 +84,8 @@
                 &bt BT_CLR    &trans        &kp N3        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N3      &trans      &trans
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hmr RSHFT PSCRN &hmr RCTRL K_VOL_UP &hmr LALT K_VOL_DN  &hmr LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
-                                            &kp SPACE     &kp TAB       &to 0                   &to 4       &kp ESC     &kp ENTER
-                                                    &kp DEL         &to 2                           &mo 1           &kp BSPC
+                                                &trans     &trans       &trans                  &&trans     &trans     &trans
+                                                    &to 0         MO_TOG(2)                         &mo 1           &to 4
             >;
         };
         nav_layer {
@@ -94,8 +94,8 @@
                 &kp F9  &kp F10  &kp F11   &kp F12   &kp ESC                    &trans      &kp HOME    &trans      &kp END     &kp PG_UP
                 &kp F5  &hml LALT F6  &hml LCTRL F7  &hml LSHFT F8  &kp PSCRN   &trans      &kp LEFT    &kp UP      &kp RIGHT   &kp PG_DN
                 &kp F1  &kp F2   &kp F3    &kp F4    &kp PAUSE_BREAK            &trans      &trans      &kp DOWN    &trans      &kp FSLH     
-                                 &kp RCTRL &kp RSHFT &to 3                      &to 0       &kp ESC     &kp ENTER
-                                    &kp LALT  &to 2                                 &mo 1           &kp BSPC
+                                 &kp RCTRL &kp RSHFT &to 3                      &to 0       &trans      &kp ENTER
+                                    &kp LALT  &to 2                                 &mo 1           &none
             >;
         };
     }; 

@@ -77,11 +77,11 @@
         nav_layer {
             display-name = "navi";
             bindings = <
-                &kp F9  &kp F10  &kp F11   &kp F12   &kp ESC                    &trans      &kp HOME    &trans      &kp END     &kp PG_UP
-                &kp F5  &hml LALT F6  &hml LCTRL F7  &hml LSHFT F8  &kp PSCRN   &trans      &kp LEFT    &kp UP      &kp RIGHT   &kp PG_DN
-                &kp F1  &kp F2   &kp F3    &kp F4    &kp PAUSE_BREAK            &trans      &trans      &kp DOWN    &trans      &kp FSLH     
-                                 &kp RCTRL &kp RSHFT &kp LALT                   &trans      &trans      &trans
-                                    MO_TOG(NUMB)    &to SYST                           &to ALFA    &mo SYMB
+                &kp F9  &kp F10      &kp F11        &kp F12        &kp ESC                  &trans          &kp HOME  &trans    &kp END    &kp PG_UP
+                &kp F5  &hml LALT F6 &hml LCTRL F7  &hml LSHFT F8  &kp MINUS                &kp PSCRN       &kp LEFT  &kp UP    &kp RIGHT  &kp PG_DN
+                &kp F1  &kp F2       &kp F3         &kp F4         &kp LS(MINUS)            &kp PAUSE_BREAK &trans    &kp DOWN  &trans     &kp FSLH     
+                                                 &kp RCTRL &kp RSHFT &kp LALT               &trans      &trans      &trans
+                                                     MO_TOG(NUMB)    &to SYST                     &to ALFA    &mo SYMB
             >;
         };
         numbers_layer {
@@ -90,7 +90,7 @@
                 &kp LT            &kp GT            &kp KP_DOT           &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
                 &hml LGUI KP_LPAR &hml LALT KP_RPAR &hml LCTRL KP_COMMA  &hml LSHFT KP_PLUS &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT          &kp RBKT          &kp KP_EQUAL         &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
-                                                           &trans        &trans          &kp ENTER                &trans    &kp COMMA  &kp N0
+                                                           &trans        &trans          &kp ENTER                &kp KP_DOT    &kp COMMA  &kp N0
                                                                 &to ALFA          &to ALFA                            &to NAVI    &mo SYMB
             >;
         };

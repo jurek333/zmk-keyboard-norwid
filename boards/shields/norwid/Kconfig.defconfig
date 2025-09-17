@@ -16,9 +16,15 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_SPLIT
+    default y
+
+config ZMK_DISPLAY
+    default y
+
 endif
 
-if SHIELD_NORWID_LEFT || SHIELD_NORWID_SILENT_LEFT || SHIELD_NORWID_RIGHT
+if SHIELD_NORWID_LEFT || SHIELD_NORWID_RIGHT
 
 config ZMK_SPLIT
     default y

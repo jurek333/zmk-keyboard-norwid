@@ -9,4 +9,5 @@ features:
   - display
 siblings:
   - norwid_left
+  - norwid_silent_left
   - norwid_right

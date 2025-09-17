@@ -1,5 +1,8 @@
 config SHIELD_NORWID_LEFT
     def_bool $(shields_list_contains,norwid_left)
 
+config SHIELD_NORWID_SILENT_LEFT
+    def_bool $(shields_list_contains,norwid_silent_left)
+
 config SHIELD_NORWID_RIGHT
     def_bool $(shields_list_contains,norwid_right)

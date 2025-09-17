@@ -8,7 +8,17 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_NORWID_LEFT || SHIELD_NORWID_RIGHT
+if SHIELD_NORWID_SILENT_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "silent_norwid"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_NORWID_LEFT || SHIELD_NORWID_SILENT_LEFT || SHIELD_NORWID_RIGHT
 
 config ZMK_SPLIT
     default y

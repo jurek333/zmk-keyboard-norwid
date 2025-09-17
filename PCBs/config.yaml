@@ -282,6 +282,16 @@ outlines:
       radius: 4
       where:
         - ref: matrix_middle_home
+  kbr:
+    - name: pcb_board
+    - operation: subtract
+      name: mounting
+    - operation: subtract
+      name: usbPcb
+    - operation: subtract
+      name: usb
+    - operation: subtract
+      name: power_sw
   _cutPlane:
     - what: rectangle
       size: [900, 900]

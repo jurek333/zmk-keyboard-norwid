@@ -25,7 +25,7 @@ config ZMK_DISPLAY
 config SSD1306
     default y
 
-config CONFIG_ZMK_DISPLAY_BLANK_ON_IDLE
+config ZMK_DISPLAY_BLANK_ON_IDLE
     default n
 
 config I2C

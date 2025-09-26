@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #define MO_TOG(layer) &mo_tog layer layer 
 #define ALFA 0
@@ -32,7 +33,7 @@
             display-name = "Home Row Mod L";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <100>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
@@ -44,7 +45,7 @@
             display-name = "Home Row Mod R";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <100>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
@@ -61,17 +62,17 @@
                 &hml LGUI A &hml RALT S &hml LCTRL D &hml LSHFT F  &kp G       &kp H  &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr LGUI MINUS
                 &kp Z       &kp X       &kp C        &kp V         &kp B       &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH     
                                         &kp BSPC    &kp DEL &hml HOME ESC     &hmr END TAB &kp ENTER  &kp SPACE
-                                                MO_TOG(NUMB)    &none                &to NAVI   &mo SYMB
+                                                MO_TOG(NUMB)    &none                MO_TOG(NAVI)   &mo SYMB
             >;
         };
         sys_layer {
             display-name = "syst";
             bindings = <
-                &bt BT_CLR    &trans        &kp N1        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N1      &trans      &trans
+                &bt BT_CLR    &trans        &kp N1        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N1      &ext_power EP_OFF      &ext_power EP_ON
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hmr RSHFT PSCRN &hmr RCTRL K_VOL_UP &hmr LALT K_VOL_DN  &hmr LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
                                                 &trans     &trans       &trans                  &trans     &trans     &trans
-                                                    MO_TOG(NUMB)    &to ALFA                          &to NAVI    &mo SYMB
+                                                    MO_TOG(NUMB)    &to ALFA                         MO_TOG(NAVI)    &mo SYMB
             >;
         };
         nav_layer {
@@ -90,8 +91,8 @@
                 &kp LT            &kp GT            &kp KP_DOT           &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
                 &hml LGUI KP_LPAR &hml LALT KP_RPAR &hml LCTRL KP_COMMA  &hml LSHFT KP_PLUS &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT          &kp RBKT          &kp KP_EQUAL         &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
-                                                           &trans        &SPACE         &kp ENTER                &kp KP_DOT    &kp COMMA  &kp N0
-                                                                &to ALFA          &to ALFA                            &to NAVI    &mo SYMB
+                                                           &trans        &kp SPACE         &kp ENTER                &kp KP_DOT    &kp COMMA  &kp N0
+                                                                &to ALFA          &to ALFA                            MO_TOG(NAVI)    &mo SYMB
             >;
         };
         symbol_layer {
@@ -101,7 +102,7 @@
                 &hml LWIN AT  &hml LALT EXCL &hml LCTRL LPAR &hml LSHFT RPAR &kp PIPE    &kp LT    &hmr RSHFT GT &hmr RCTRL SEMI &hmr LALT APOS &hmr LGUI DQT
                 &kp LEFT   &kp RIGHT     &kp LBRC       &kp RBRC       &kp GRAVE         &kp LBKT  &kp RBKT      &kp COMMA       &kp DOT        &kp BSLH     
                                          &trans         &trans         &trans            &trans    &trans        &trans
-                                                    &kp PG_UP      &kp PG_DN                  &to NAVI       &none
+                                                    &kp PG_UP      &kp PG_DN                 MO_TOG(NAVI)       &none
             >;
         };
     }; 

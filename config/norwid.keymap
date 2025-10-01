@@ -68,9 +68,9 @@
         sys_layer {
             display-name = "syst";
             bindings = <
-                &bt BT_CLR    &trans        &kp N1        &trans        &bt BT_CLR_ALL          &kp K_MUTE  &trans      &kp N1      &ext_power EP_OFF      &ext_power EP_ON
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans      &hmr RSHFT PSCRN &hmr RCTRL K_VOL_UP &hmr LALT K_VOL_DN  &hmr LGUI PAUSE_BREAK
-                &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &trans      &trans      &trans      &trans      &trans   
+                &bt BT_CLR    &trans        &kp N1        &trans        &bt BT_CLR_ALL          &kp C_MUTE  &trans      &kp N1      &ext_power EP_OFF      &ext_power EP_ON
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &kp C_BRI_INC &hmr RSHFT PSCRN &hmr RCTRL C_VOL_UP &hmr LALT C_VOL_DN  &hmr LGUI PAUSE_BREAK
+                &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &kp C_BRI_DEC &trans      &trans      &trans      &trans   
                                                 &trans     &trans       &trans                  &trans     &trans     &trans
                                                     MO_TOG(NUMB)    &to ALFA                         MO_TOG(NAVI)    &mo SYMB
             >;
@@ -78,9 +78,9 @@
         nav_layer {
             display-name = "navi";
             bindings = <
-                &kp F9  &kp F10      &kp F11        &kp F12        &kp ESC                  &trans          &kp HOME  &trans    &kp END    &kp PG_UP
+                &kp F9  &kp F10      &kp F11        &kp F12        &kp ESC                  &kp INS         &kp HOME  &kp N2    &kp END    &kp PG_UP
                 &kp F5  &hml LALT F6 &hml LCTRL F7  &hml LSHFT F8  &kp MINUS                &kp PSCRN       &kp LEFT  &kp UP    &kp RIGHT  &kp PG_DN
-                &kp F1  &kp F2       &kp F3         &kp F4         &kp LS(MINUS)            &kp PAUSE_BREAK &trans    &kp DOWN  &trans     &kp FSLH     
+                &kp F1  &kp F2       &kp F3         &kp F4         &kp LS(MINUS)            &kp PAUSE_BREAK &kp K_APP &kp DOWN  &kp K_CMENU  &kp FSLH     
                                                  &kp RCTRL &kp RSHFT &kp LALT               &trans      &trans      &trans
                                                      MO_TOG(NUMB)    &to SYST                     &to ALFA    &mo SYMB
             >;

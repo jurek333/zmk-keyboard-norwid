@@ -27,7 +27,7 @@
 //};
 
 nice_view_spi: &spi0 {
-    status =
+    status = "okay";
     compatible = "nordic,nrf-spim";
     sck-pin = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
     mosi-pin = <&xiao_d 4 GPIO_ACTIVE_HIGH>;

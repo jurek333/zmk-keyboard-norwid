@@ -32,10 +32,7 @@ nice_view_spi: &spi0 {
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    sck-pin = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
-    mosi-pin = <&xiao_d 4 GPIO_ACTIVE_HIGH>;
     cs-gpios = <&gpio1 19 GPIO_ACTIVE_HIGH>;
-    miso-pin = <&gpio1 18 GPIO_ACTIVE_HIGH>;
 
     ls0xx: ls0xx@0 {
 		compatible = "sharp,ls0xx";

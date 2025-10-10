@@ -14,7 +14,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: norwid_right
   - board: seeeduino_xiao_ble
-    shield: norwid_silent_left nice_view_adapter nice_view
+    shield: norwid_silent_left nice_view
     artifact-name: silent_norwid_left_with_nice_view
 #   - board: nice_nano_v2
 #     shield: corne_left

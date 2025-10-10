@@ -1,11 +1,5 @@
 #include "norwid.dtsi"
 
-/ {
-    chosen {
-        zephyr,display = &nice_view;
-    };
-};
-
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
@@ -32,6 +26,12 @@
  	};
 };
 
+/ {
+    chosen {
+        zephyr,display = &nice_view;
+    };
+};
+
 nice_view_spi: &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -39,6 +39,15 @@ nice_view_spi: &spi0 {
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio1 19 GPIO_ACTIVE_HIGH>;
+
+		nice_view: ls0xx@0 {
+			status = "okay";
+			compatible = "sharp,ls0xx";
+			spi-max-frequency = <1000000>;
+			reg = <0>;
+			width = <160>;
+			height = <68>;
+		};
 };
 
 &xiao_i2c {

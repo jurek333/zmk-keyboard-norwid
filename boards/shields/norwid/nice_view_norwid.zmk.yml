@@ -1,8 +1,7 @@
 file_format: "1"
-id: nice_view
-name: nice!view
+id: nice_view_norwid
+name: nice_view_norwid
 type: shield
-url: https://nicekeyboards.com/nice-view
 requires: [nice_view_header]
 features:
   - display

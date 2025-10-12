@@ -1,0 +1,2 @@
+config SHIELD_NICE_NORWID
+    def_bool $(shields_list_contains,nice_norwid)

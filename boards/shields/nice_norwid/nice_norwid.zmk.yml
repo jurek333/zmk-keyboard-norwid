@@ -1,6 +1,6 @@
 file_format: "1"
-id: nice_view_norwid
-name: nice_view_norwid
+id: nice_norwid
+name: nice_norwid
 type: shield
 requires: [nice_view_header]
 features:

@@ -88,9 +88,9 @@
         numbers_layer {
             display-name = "numb";
             bindings = <
-                &kp LT            &kp GT            &kp KP_DOT           &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
-                &hml LGUI KP_LPAR &hml LALT KP_RPAR &hml LCTRL KP_COMMA  &hml LSHFT KP_PLUS &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
-                &kp LBKT          &kp RBKT          &kp KP_EQUAL         &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
+                &kp LT            &kp GT            &kp DOT              &kp PRCNT          &kp CARET            &kp LS(C) &kp N7 &kp N8 &kp N9 &kp LS(F)
+                &hml LGUI LPAR    &hml LALT RPAR    &hml LCTRL COMMA     &hml LSHFT PLUS    &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
+                &kp LBKT          &kp RBKT          &kp EQUAL            &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
                                                            &kp BSPC    &kp SPACE        &kp ENTER                &kp KP_DOT    &kp COMMA  &kp N0
                                                                 &to ALFA          &to ALFA                            MO_TOG(NAVI)    &mo SYMB
             >;

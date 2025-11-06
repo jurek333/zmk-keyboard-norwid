@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-&nice_norwid_spi {
+nice_norwid_spi {
     status = "okay";
     nice_norwid: ls0xx@0 {
 		status = "okay";

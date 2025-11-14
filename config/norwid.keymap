@@ -13,6 +13,17 @@
 
 
 / {
+    macros {
+        vs_ref: vs_ref {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp K &kp R>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -78,9 +89,9 @@
         nav_layer {
             display-name = "navi";
             bindings = <
-                &kp F9  &kp F10      &kp F11        &kp F12        &kp ESC                  &kp INS         &kp HOME  &kp N2    &kp END    &kp PG_UP
-                &kp F5  &hml LALT F6 &hml LCTRL F7  &hml LSHFT F8  &kp MINUS                &kp PSCRN       &kp LEFT  &kp UP    &kp RIGHT  &kp PG_DN
-                &kp F1  &kp F2       &kp F3         &kp F4         &kp LS(MINUS)            &kp PAUSE_BREAK &kp K_APP &kp DOWN  &kp K_CMENU  &kp FSLH     
+                &kp F9  &kp F10      &kp F11        &kp F12        &kp RC(F12)                  &kp INS         &kp HOME  &kp N2    &kp END    &kp PG_UP
+                &kp F5  &hml LALT F6 &hml LCTRL F7  &hml LSHFT F8  &kp RC(MINUS)                &kp PSCRN       &kp LEFT  &kp UP    &kp RIGHT  &kp PG_DN
+                &kp F1  &kp F2       &kp F3         &kp F4         &vs_ref                      &kp PAUSE_BREAK &kp K_APP &kp DOWN  &kp K_CMENU  &kp FSLH     
                                                  &kp RCTRL &kp RSHFT &kp LALT               &trans      &trans      &trans
                                                      MO_TOG(NUMB)    &to SYST                     &to ALFA    &mo SYMB
             >;

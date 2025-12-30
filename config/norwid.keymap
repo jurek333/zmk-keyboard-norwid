@@ -73,7 +73,7 @@
                 &hml LGUI A &hml RALT S &hml LCTRL D &hml LSHFT F  &kp G       &kp H  &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr LGUI MINUS
                 &kp Z       &kp X       &kp C        &kp V         &kp B       &kp N  &kp M        &kp COMMA    &kp DOT     &kp FSLH     
                                         &hml HOME ESC  &kp BSPC    &kp DEL      &hmr END TAB &kp ENTER  &kp SPACE
-                                                MO_TOG(NUMB)    &none                MO_TOG(NAVI)   &mo SYMB
+                                                MO_TOG(NUMB)    MO_TOG(NAVI)           &none   &mo SYMB
             >;
         };
         sys_layer {
@@ -83,7 +83,7 @@
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &kp C_BRI_INC &hmr RSHFT PSCRN &hmr RCTRL C_VOL_UP &hmr LALT C_VOL_DN  &hmr LGUI PAUSE_BREAK
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4           &kp C_BRI_DEC &trans      &trans      &trans      &trans   
                                                 &trans     &trans       &trans                  &trans     &trans     &trans
-                                                    MO_TOG(NUMB)    &to ALFA                         MO_TOG(NAVI)    &mo SYMB
+                                                    MO_TOG(NUMB)     MO_TOG(NAVI)                   &to ALFA    &mo SYMB
             >;
         };
         nav_layer {
@@ -92,8 +92,8 @@
                 &kp F9  &kp F10      &kp F11        &kp F12        &kp RC(F12)                  &kp INS         &kp HOME  &kp N2    &kp END    &kp PG_UP
                 &kp F5  &hml LALT F6 &hml LCTRL F7  &hml LSHFT F8  &kp RC(MINUS)                &kp PSCRN       &kp LEFT  &kp UP    &kp RIGHT  &kp PG_DN
                 &kp F1  &kp F2       &kp F3         &kp F4         &vs_ref                      &kp PAUSE_BREAK &kp K_APP &kp DOWN  &kp K_CMENU  &kp FSLH     
-                                                 &kp RCTRL &kp RSHFT &kp LALT               &trans      &trans      &trans
-                                                     MO_TOG(NUMB)    &to SYST                     &to ALFA    &mo SYMB
+                                                  &trans      &trans      &trans               &trans      &trans      &trans
+                                                     MO_TOG(NUMB)    &to ALFA                     &to SYST    &mo SYMB
             >;
         };
         numbers_layer {
@@ -103,7 +103,7 @@
                 &hml LGUI LPAR    &hml LALT RPAR    &hml LCTRL COMMA     &hml LSHFT PLUS    &kp KP_MULTIPLY      &kp LS(B) &kp N4 &kp N5 &kp N6 &kp LS(E)
                 &kp LBKT          &kp RBKT          &kp EQUAL            &kp KP_MINUS       &kp KP_DIVIDE        &kp LS(A) &kp N1 &kp N2 &kp N3 &kp LS(D)     
                                                            &kp BSPC    &kp SPACE        &kp ENTER                &kp KP_DOT    &kp COMMA  &kp N0
-                                                                &to ALFA          &to ALFA                            MO_TOG(NAVI)    &mo SYMB
+                                                                &to ALFA         MO_TOG(NAVI)                         &to ALFA     &mo SYMB
             >;
         };
         symbol_layer {
@@ -112,8 +112,8 @@
                 &kp UP     &kp DOWN        &kp HASH       &kp DLLR       &kp PRCNT       &kp CARET &kp AMPS      &kp STAR        &kp MINUS      &kp EQUAL
                 &hml LWIN AT  &hml LALT EXCL &hml LCTRL LPAR &hml LSHFT RPAR &kp PIPE    &kp LT    &hmr RSHFT GT &hmr RCTRL SEMI &hmr LALT APOS &hmr LGUI DQT
                 &kp LEFT   &kp RIGHT     &kp LBRC       &kp RBRC       &kp GRAVE         &kp LBKT  &kp RBKT      &kp COMMA       &kp DOT        &kp BSLH     
-                                         &trans         &trans         &trans            &trans    &trans        &trans
-                                                    &kp PG_UP      &kp PG_DN                 MO_TOG(NAVI)       &none
+                                             &kp PG_UP      &kp BSPC    &kp DEL            &kp PG_DN    &kp ENTER  &kp SPACE
+                                                          &none    &none                 &none       &none
             >;
         };
     }; 

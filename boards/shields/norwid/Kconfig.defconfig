@@ -52,6 +52,10 @@ endif # ZMK_DISPLAY
 
 endif
 
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
 if SHIELD_NICE_VIEW_NORWID
 
 config LV_Z_VDB_SIZE
@@ -62,10 +66,6 @@ config LV_DPI_DEF
 
 config LV_Z_BITS_PER_PIXEL
     default 1
-
-choice LV_COLOR_DEPTH
-    default LV_COLOR_DEPTH_1
-endchoice
 
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED

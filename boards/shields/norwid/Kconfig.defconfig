@@ -8,6 +8,31 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if SHIELD_NORWID_SILENT_LEFT_LCD
+
+config ZMK_KEYBOARD_NAME
+    default "silent_norwid"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_DISPLAY
+    default y
+
+config SSD1306
+    default n
+
+config ZMK_DISPLAY_BLANK_ON_IDLE
+    default n
+
+config I2C
+    default n
+
+endif
+
 if SHIELD_NORWID_SILENT_LEFT
 
 config ZMK_KEYBOARD_NAME

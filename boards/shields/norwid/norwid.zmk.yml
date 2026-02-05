@@ -10,4 +10,5 @@ features:
 siblings:
   - norwid_left
   - norwid_silent_left
+  - norwid_silent_left_lcd
   - norwid_right

@@ -4,5 +4,8 @@ config SHIELD_NORWID_LEFT
 config SHIELD_NORWID_SILENT_LEFT
     def_bool $(shields_list_contains,norwid_silent_left)
 
+config SHIELD_NORWID_SILENT_LEFT_LCD
+    def_bool $(shields_list_contains,norwid_silent_left_lcd)
+
 config SHIELD_NORWID_RIGHT
     def_bool $(shields_list_contains,norwid_right)

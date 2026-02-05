@@ -146,7 +146,7 @@ int zmk_widget_dongle_battery_status_init(struct zmk_widget_dongle_battery_statu
     widget->obj = lv_obj_create(parent);
 
     lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-    
+    /*
     for (int i = 0; i < ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET; i++) {
         lv_obj_t *image_canvas = lv_canvas_create(widget->obj);
         lv_obj_t *battery_label = lv_label_create(widget->obj);
@@ -164,7 +164,7 @@ int zmk_widget_dongle_battery_status_init(struct zmk_widget_dongle_battery_statu
             .label = battery_label,
         };
     }
-
+*/
     //sys_slist_append(&widgets, &widget->node);
 
     //widget_dongle_battery_status_init();

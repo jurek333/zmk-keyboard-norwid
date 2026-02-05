@@ -20,10 +20,10 @@ config ZMK_SPLIT
     default y
 
 config ZMK_DISPLAY
-    default y
+    default n
 
 config SSD1306
-    default y
+    default n
 
 config ZMK_DISPLAY_BLANK_ON_IDLE
     default n

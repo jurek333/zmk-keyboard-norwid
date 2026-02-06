@@ -204,7 +204,7 @@ int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_ob
 
     sys_slist_append(&widgets, &widget->node);
 
-    widget_output_status_init();
+    //widget_output_status_init();
     return 0;
 }
 

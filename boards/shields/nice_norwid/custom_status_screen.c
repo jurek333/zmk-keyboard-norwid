@@ -51,7 +51,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
 
     
-    zmk_widget_output_status_init(&output_status_widget, screen);
+    //zmk_widget_output_status_init(&output_status_widget, screen);
     //lv_obj_align(zmk_widget_output_status_obj(&output_status_widget), LV_ALIGN_TOP_LEFT, 0, 0);
 /*    
 #if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_WPM)

@@ -14,7 +14,7 @@ config LVGL
 
 # Enable the Montserrat 48pt font used by the MJ widget.
 # Drop to _32 or _24 if you are tight on flash.
-config LV_FONT_MONTSERRAT_48
+config LV_FONT_MONTSERRAT_24
     default y
 
 # MJ widget

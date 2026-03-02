@@ -11,6 +11,7 @@
 #include <lvgl.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <zmk/event_manager.h>
 
 #include <zmk/display.h>
 

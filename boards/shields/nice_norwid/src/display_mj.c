@@ -61,4 +61,8 @@ static int display_mj_init(void)
 }
 
 /* Register as a ZMK display widget so it is called at boot */
-ZMK_DISPLAY_WIDGET_LISTENER(display_mj, 0, display_mj_init, NULL)
+static int get_state(const zmk_event_t *eh) {
+  return 0;
+}
+
+ZMK_DISPLAY_WIDGET_LISTENER(display_mj, int, display_mj_init, get_state)

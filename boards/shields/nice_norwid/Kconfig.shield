@@ -1,2 +1,13 @@
 config SHIELD_NICE_NORWID
     def_bool $(shields_list_contains,nice_norwid)
+
+if ZMK_DISPLAY
+
+config ZMK_WIDGET_MJ
+    bool "Show 'MJ' text on the display"
+    default y
+    help
+      Renders the text "MJ" centered on the Sharp LS0xx display using
+      the LVGL Montserrat 48 font.
+
+endif # ZMK_DISPLAY

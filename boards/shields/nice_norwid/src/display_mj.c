@@ -8,6 +8,7 @@
  * subsystem and LVGL for us; we just create the label.
  */
 
+#include <lvgl.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 

@@ -20,5 +20,13 @@ config LV_FONT_MONTSERRAT_48
 # MJ widget
 config ZMK_WIDGET_MJ
     default y
+                        
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+ 
+# choice ZMK_DISPLAY_STATUS_SCREEN
+#     default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+# endchoice
 
 endif #SHIELD_NICE_NORWID

@@ -29,7 +29,7 @@ static lv_obj_t *mj_label;
 /* in turn calls every function registered with                        */
 /* ZMK_DISPLAY_WIDGET_LISTENER().  We hook in here.                    */
 /* ------------------------------------------------------------------ */
-static int mj_init(void)
+static int mj_init(int val)
 {
     /* Get the active LVGL screen */
     lv_obj_t *screen = lv_scr_act();

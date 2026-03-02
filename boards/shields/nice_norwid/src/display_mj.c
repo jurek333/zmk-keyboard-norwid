@@ -49,7 +49,7 @@ static int mj_init(int val)
      * lv_font_montserrat_48 is the biggest shipped with ZMK/LVGL.
      * If your display is small (128×128) you may prefer _32 or _24.
      */
-    lv_obj_set_style_text_font(mj_label, &lv_font_montserrat_48, LV_PART_MAIN);
+    lv_obj_set_style_text_font(mj_label, &lv_font_montserrat_24, LV_PART_MAIN);
 
     /* White text on the black LS0xx background */
     lv_obj_set_style_text_color(mj_label, lv_color_white(), LV_PART_MAIN);

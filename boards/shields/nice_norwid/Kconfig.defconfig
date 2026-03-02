@@ -1,9 +1,5 @@
 if SHIELD_NICE_NORWID
 
-
-config SHIELD
-    default "nice_norwid"
-
 # Enable Zephyr display subsystem
 config ZMK_DISPLAY
     default y
